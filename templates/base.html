@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}{% endblock %}
+
+</head>
+<body>
+    {% block content %}{% endblock %}
+
+</body>
+</html>
+
+{% comment %} {{ form.hidden_tag() }}
+				{{ wtf.form_errors(form, hiddens="only") }}
+		
+				{{ wtf.form_field(form.sex) }}
+			
+				{{ wtf.form_field(form.name) }}
+				{{ wtf.form_field(form.age) }}
+				{{ wtf.form_field(form.email) }}
+				{{ wtf.form_field(form.phone) }}
+				{{ wtf.form_field(form.file1) }}
+				{{ wtf.form_field(form.comment1) }}
+				{{ wtf.form_field(form.file2) }}
+				{{ wtf.form_field(form.comment2) }}
+				{{ wtf.form_field(form.file3) }}
+				{{ wtf.form_field(form.submit) }} {% endcomment %}

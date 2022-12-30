@@ -1,0 +1,85 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='css/style.css')}}">
+{% endblock styles %}
+<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+{% endblock head %}
+
+
+{% block content %}
+<div class="wrapper">
+	<div class="containerr">
+
+		<div class="contact_form">
+
+			<div class="one-block__column">
+
+
+				<div class="name_gender">
+					<div class="name_gender__container">
+						
+						<h2 ><i class="fa fa-align-center" aria-hidden="true">Пожалуйста, заполните поля ниже</i></h2>
+						
+
+						<form name="person" action="" method="POST" enctype="multipart/form-data">
+						
+							{{ form.hidden_tag() }}
+							{% if form.errors %}
+								{{ form.errors }}
+							{% endif %}
+							{{ wtf.form_field(form.sex) }}
+							{{ wtf.form_field(form.name) }}
+
+						
+							{{ wtf.form_field(form.file1) }}
+							<div id="file1_block"></div>
+							
+						
+
+							{{ wtf.form_field(form.comment1) }}
+
+						
+							{{ wtf.form_field(form.file2) }}
+							<div id="file2_block"></div>
+
+							{{ wtf.form_field(form.comment2) }}
+
+					
+							{{ wtf.form_field(form.file3) }}
+							<div id="file3_block"></div>
+					
+							
+					
+					
+							{{ wtf.form_field(form.email) }}
+							
+							{{ wtf.form_field(form.phone) }}
+					
+
+							{{ wtf.form_field(form.submit) }}
+			
+
+						</form>
+					</div class="name_gender__container">
+				</div>
+		
+
+				
+				
+	
+				
+				
+			</div>
+		</div>
+</div class="wrapper">
+<script src="{{url_for('.static', filename='js/main.js')}}">
+
+{% endblock %}
+

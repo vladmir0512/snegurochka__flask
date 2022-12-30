@@ -1,0 +1,32 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='css/style.css')}}">
+{% endblock %}
+
+{% block content %}
+
+		<div class="container">
+			<h1>Contact Us</h1>
+			
+		 	<form action="" method="POST">
+				{% if form.errors %}
+                {{ form.errors }}
+                {% endif %}
+				
+
+               
+                {{ form.csrf_token }}				
+                {{ wtf.form_field(form.phone) }}
+                {{ wtf.form_field(form.comment1) }}
+                {{ wtf.form_field(form.comment2) }}
+				{{ wtf.form_field(form.submit) }}
+			</form>
+			
+			
+		</div>
+
+<script src="{{url_for('.static', filename='js/main.js')}}">
+{% endblock %}
+
